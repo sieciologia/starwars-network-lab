@@ -1,0 +1,15 @@
+enable
+configure terminal
+hostname R2-D2
+
+interface GigabitEthernet0/1
+ ip address 192.168.1.1 255.255.255.0
+ no shutdown
+exit
+
+banner motd $Access restricted to Rebel Alliance personnel only$
+enable secret force2025
+line console 0
+ password jedi
+ login
+exit

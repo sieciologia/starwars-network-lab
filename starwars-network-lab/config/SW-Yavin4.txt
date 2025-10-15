@@ -1,0 +1,22 @@
+enable
+configure terminal
+hostname Sw-Yavin4
+
+interface vlan1
+ ip address 192.168.1.2 255.255.255.0
+ no shutdown
+exit
+
+interface FastEthernet0/1
+ description Link_to_SW-Dagobah
+interface FastEthernet0/5
+ description Link_to_Router_R2-D2
+interface FastEthernet0/6
+ description Luke_PC
+
+banner motd $Restricted area - Rebel Base Yavin 4$
+enable secret rebel
+line console 0
+ password hope
+ login
+exit
